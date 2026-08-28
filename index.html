@@ -60,6 +60,28 @@
             border-radius: 4px;
             font-family: monospace;
         }
+            /* --- Fix KaTeX Matrix & PDF Page Break Splitting --- */
+    .katex .delimsizing {
+        display: inline-block !important;
+    }
+    .katex .array {
+        vertical-align: middle;
+    }
+    .notebook-paper .katex {
+        font-size: 1.15em;
+    }
+    /* Prevent formulas, paragraphs and steps from splitting awkwardly across pages */
+    .notebook-paper p, 
+    .notebook-paper div, 
+    .notebook-paper h1, 
+    .notebook-paper h2, 
+    .notebook-paper h3, 
+    .notebook-paper pre,
+    .katex-display {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen transition-colors duration-200">
